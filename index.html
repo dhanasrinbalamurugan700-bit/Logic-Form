@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Form</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fea44f, #e000fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: rgb(18, 1, 2);
+    padding: 40px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 25px;
+    color: #4ffeef;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4facfe;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4facfe;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00c6fb;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="login-box">
+    <h2>🔐 Login</h2>
+
+    <form onsubmit="return login()">
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="message" id="message"></div>
+</div>
+
+<script>
+function login() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    // Basic Demo Credentials
+    if(user === "admin" && pass === "1234") {
+        document.getElementById("message").innerHTML = "✅ Login Successful!";
+        document.getElementById("message").style.color = "green";
+    } else {
+        document.getElementById("message").innerHTML = "❌ Invalid Username or Password!";
+        document.getElementById("message").style.color = "red";
+    }
+
+    return false; // prevent page reload
+}
+</script>
+
+</body>
+</html>
